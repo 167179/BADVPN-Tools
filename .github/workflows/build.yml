@@ -25,10 +25,8 @@ jobs:
         run: ./configure
       - name: run build wrapper
         run: ./build-wrapper-linux-x86/build-wrapper-linux-x86-64 --out-dir build_wrapper_output_directory make clean all
-      - name: SonarCloud Scan
-        uses: SonarSource/sonarcloud-github-action@master
-    #  - name: run sonar scanner
-       # run: ./sonar-scanner-4.5.0.2216-linux/bin/sonar-scanner   -Dsonar.organization=$SONAR_ORG   -Dsonar.projectKey=$SONAR_PROJECT_KEY   -Dsonar.sources=.   -Dsonar.host.url=https://sonarcloud.io
+      - name: run sonar scanner
+        run: ./sonar-scanner-4.5.0.2216-linux/bin/sonar-scanner   -Dsonar.organization=$SONAR_ORG   -Dsonar.projectKey=$SONAR_PROJECT_KEY   -Dsonar.sources=.   -Dsonar.host.url=https://sonarcloud.io
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
