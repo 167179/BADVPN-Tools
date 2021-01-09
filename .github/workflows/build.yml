@@ -14,7 +14,7 @@ jobs:
         with:
           fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
       - name: setup build system
-        run: sudo apt install libnspr4-dev
+        run: sudo apt install libnspr4-dev libnss3-dev
       - name: mkdir build
         run: mkdir build
       - name: download sonar scanner
