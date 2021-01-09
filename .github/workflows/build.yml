@@ -17,6 +17,8 @@ jobs:
         run: sudo apt install libnspr4-dev libnss3-dev
       - name: mkdir build
         run: mkdir build
+      - name: copy sonar properties to build directory
+        run: cp ./sonar-project.properties ./build/sonar-project.properties
       - name: download sonar scanner
         run: wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.5.0.2216-linux.zip
         working-directory: build
